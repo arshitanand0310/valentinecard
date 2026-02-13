@@ -1,0 +1,60 @@
+.glow-btn {
+    margin-top: 40px;
+    padding: 14px 40px;
+    font-size: 1.2rem;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(45deg, #ff1493, #ff4db8);
+    box-shadow: 0 0 10px #ff1493, 0 0 25px #ff1493, 0 0 45px #ff1493;
+    transition: 0.3s;
+}
+
+.glow-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #ff4db8, 0 0 60px #ff1493;
+}
+
+.btn-row {
+    margin-top: 50px;
+    display: flex;
+    gap: 40px;
+    position: relative;
+}
+
+.yes {
+    background: linear-gradient(45deg, #ff1493, #ff4db8);
+}
+
+.no {
+    background: linear-gradient(45deg, #555, #222);
+    position: relative;
+    transition: transform 0.25s ease;
+}
+
+.floating-text.romantic {
+    position: fixed;
+    color: #ff9ee6;
+    font-weight: 600;
+    pointer-events: none;
+    animation: romanticFloat 2s ease-out forwards;
+    text-shadow: 0 0 10px #ff4db8, 0 0 25px #ff1493;
+}
+
+@keyframes romanticFloat {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 20px) scale(0.8);
+    }
+    20% {
+        opacity: 1;
+    }
+    70% {
+        transform: translate(-50%, -60px) scale(1.05);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -120px) scale(1);
+    }
+}

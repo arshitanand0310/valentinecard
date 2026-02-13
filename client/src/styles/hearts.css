@@ -1,0 +1,81 @@
+/* ================= HEARTS BACKGROUND ================= */
+
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -1;
+}
+
+
+/* HEART SHAPE */
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    background: #ff4db8;
+    transform: rotate(45deg);
+    animation: floatUp 18s linear infinite;
+    filter: drop-shadow(0 0 8px #ff1493) drop-shadow(0 0 18px #ff1493) drop-shadow(0 0 35px #ff1493);
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ff4db8;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -50%;
+    left: 0;
+}
+
+.heart::after {
+    left: -50%;
+    top: 0;
+}
+
+
+/* FLOATING ANIMATION */
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(45deg) scale(0.7);
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(45deg) scale(1.2);
+        opacity: 0;
+    }
+}
+
+
+/* ================= MOBILE PERFORMANCE MODE ================= */
+
+@media (max-width: 768px) {
+    /* Remove expensive glow */
+    .heart {
+        filter: none;
+        opacity: 0.7;
+        animation: floatUp 28s linear infinite;
+    }
+    /* Smaller hearts */
+    .heart {
+        transform: rotate(45deg) scale(0.7);
+    }
+    /* Reduce total GPU usage */
+    .hearts-container {
+        opacity: 0.6;
+    }
+}
