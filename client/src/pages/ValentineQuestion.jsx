@@ -23,12 +23,12 @@ export default function ValentineQuestion() {
   const [texts, setTexts] = useState([]);
 
   const moveButton = () => {
-    // smooth and fast movement
+   
     const x = Math.random() * 500 - 250;
     const y = Math.random() * 500 - 250;
     setPos({ x, y });
 
-    // random position on screen
+    
     const newText = {
       id: Date.now(),
       text: phrases[Math.floor(Math.random() * phrases.length)],
@@ -48,7 +48,7 @@ export default function ValentineQuestion() {
 
     <div className="page">
 
-        {/* Back button */}
+       
       <BackButton />
 
       <h1 className="title">Will you be my Valentine?</h1>
