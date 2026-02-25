@@ -7,8 +7,8 @@ export default function FinalPage() {
   const navigate = useNavigate();
 
   const replay = () => {
-    resetAll();          // ⭐ clears snacks + session
-    navigate("/");       // go back to start
+    resetAll();          
+    navigate("/");      
   };
 
   return (
