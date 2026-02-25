@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import BackButton from "../components/BackButton";
 
 const letterLines = [
-  "Adrika,",
+  "X,",
   "",
   "I don’t say this enough,",
   "but you mean more to me than I can explain.",
@@ -28,18 +28,18 @@ const letterLines = [
   "with you.",
   "",
   "I just wish we stay like this",
-  "forever.. ❤️",
+  "forever.. ",
   "",
-  "— Arshit"
+  "— x"
 ];
 
 export default function LoveLetter() {
   const [visibleLines, setVisibleLines] = useState([]);
   const navigate = useNavigate();
   const boxRef = useRef(null);
-  const startedRef = useRef(false); // prevents double typing in StrictMode
+  const startedRef = useRef(false); 
 
-  // Human typing animation (StrictMode safe)
+  
   useEffect(() => {
     if (startedRef.current) return;
     startedRef.current = true;
@@ -60,7 +60,7 @@ export default function LoveLetter() {
     typeNext();
   }, []);
 
-  // Auto scroll as text appears
+ 
   useEffect(() => {
     if (boxRef.current) {
       boxRef.current.scrollTop = boxRef.current.scrollHeight;
@@ -70,7 +70,7 @@ export default function LoveLetter() {
   return (
     <div className="page">
 
-      {/* Back button */}
+      
       <BackButton />
 
       <div className="letter-box" ref={boxRef}>
